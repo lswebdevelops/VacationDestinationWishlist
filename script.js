@@ -1,4 +1,7 @@
-var destailsForm = document.querySelector("#destination_details_form");
+(function(){
+
+    "use strict";
+let destailsForm = document.querySelector("#destination_details_form");
 
 destailsForm.addEventListener('submit', handleFormSubmit);
 
@@ -10,6 +13,7 @@ function handleFormSubmit(event){
     let destLocation = event.target.elements["location"].value;
     let destPhoto    = event.target.elements["photo"].value;
     let destDesc     = event.target.elements["description"].value;
+    
     //2. clear out the form fields
     for(let i =0; i < destailsForm.length; i++){
         destailsForm.elements[i].value = "";
@@ -99,5 +103,8 @@ function removeDestination (event){
     // it goes up one parent, then another parent and removes it
     card.remove();
 }
+
+
+}());
 
 
